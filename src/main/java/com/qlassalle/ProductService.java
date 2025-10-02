@@ -1,17 +1,24 @@
 package com.qlassalle;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ProductService {
 
-    private List<Product> products = List.of(
-            new Product(1, "Foot ball", 10.41f),
-            new Product(2, "Bike", 799f),
-            new Product(3, "T-Shirt", 12f),
-            new Product(4, "Shoes", 39.21f),
-            new Product(5, "Skateboard", 29.99f),
-            new Product(6, "Electric bike", 1899.49f)
-    );
+    private static List<Product> products = new ArrayList<>();
+
+    static {{
+        products.add(new Product(1, "Foot ball", 10.41f));
+        products.add(new Product(2, "Bike", 799f));
+        products.add(new Product(3, "T-Shirt", 12f));
+        products.add(new Product(4, "Shoes", 39.21f));
+        products.add(new Product(5, "Skateboard", 29.99f));
+        products.add(new Product(6, "Electric bike", 1899.49f));
+    }}
+
+    public List<Product> getProducts() {
+        return products;
+    }
 
     public void addProduct(int id, String name, float price) {
         var product = new Product(id, name, price);
@@ -28,6 +35,7 @@ public class ProductService {
         return null;
     }
 
+    // TODO how to test this?
     public void sendProductToEcommerceAndSendEmailToClient(int id) {
         var product = getProductById(id);
         sendProductToEcommerce(product);
@@ -39,6 +47,6 @@ public class ProductService {
     }
 
     private void sendMessageToDecreaseStockToStockTeam(Product product) {
-        System.out.printf("Sending message to decrease stock...", product.getId());
+        System.out.printf("Sending message to decrease stock for product %d...", product.getId());
     }
 }

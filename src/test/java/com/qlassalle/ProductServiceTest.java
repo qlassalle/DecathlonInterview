@@ -16,4 +16,15 @@ class ProductServiceTest {
 
         assertEquals(expected, product);
     }
+
+    @Test
+    void shouldAddAProduct() {
+        productService.addProduct(7, "Foot ball", 10.41f);
+
+        assertEquals(7, productService.getProducts().size());
+    }
+
+    // TODO how to improve the get by?
+    // TODO how to handle duplicates?
+    // TODO how to manage an auto increment?
 }
