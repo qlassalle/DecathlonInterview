@@ -42,15 +42,6 @@ public class ProductService {
      *
      * @param numberOfProducts the number of products to return
      * @return a list of the k most expensive products, sorted from most to least expensive
-     *
-     * TODO: Implement this method. Consider edge cases (e.g., k > number of products, k <= 0),
-     * immutability of the returned list, and clean code best practices.
-     *
-     * Potential discussion points:
-     * - What is the algorithmic complexity?
-     * - What should happen if k is invalid?
-     * - Should this return an immutable list?
-     * - How to handle ties in price?
      */
     public List<Product> getMostExpensiveProducts(int numberOfProducts) {
         // TODO 1: implement
