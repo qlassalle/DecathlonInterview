@@ -6,6 +6,7 @@ import java.util.List;
 public class ProductService {
 
     private static List<Product> products = new ArrayList<>();
+    public EcommerceService ecommerceService = new EcommerceService();
 
     static {{
         products.add(new Product(1, "Foot ball", 10.41f));
@@ -23,6 +24,7 @@ public class ProductService {
     public void addProduct(int id, String name, float price) {
         var product = new Product(id, name, price);
         products.add(product);
+        sendProductToEcommerceAndSendEmailToClient(product.getId());
     }
 
     public Product getProductById(int id) {
@@ -33,21 +35,6 @@ public class ProductService {
         }
 
         return null;
-    }
-
-    // TODO how to test this?
-    public void sendProductToEcommerceAndSendEmailToClient(int id) {
-        var product = getProductById(id);
-        sendProductToEcommerce(product);
-        sendMessageToDecreaseStockToStockTeam(product);
-    }
-
-    private void sendProductToEcommerce(Product product) {
-        System.out.printf("Sending product %d to ecommerce...", product.getId());
-    }
-
-    private void sendMessageToDecreaseStockToStockTeam(Product product) {
-        System.out.printf("Sending message to decrease stock for product %d...", product.getId());
     }
 
     /**
@@ -66,7 +53,19 @@ public class ProductService {
      * - What is the algorithmic complexity?
      */
     public List<Product> getKMostExpensiveProducts(int k) {
-        // TODO: implement
+        // TODO 1: implement
         throw new UnsupportedOperationException("Not implemented yet");
     }
+
+    // TODO 2: implement a method to get the average price of products in the catalog
+
+    // TODO 3: how to test this? Implement these methods in the ecommerce service where it should be saved in message
+    //  queues provided by some interface
+    public void sendProductToEcommerceAndSendEmailToClient(int id) {
+        var product = getProductById(id);
+        ecommerceService.sendProductToEcommerce(product);
+        ecommerceService.sendMessageToDecreaseStockToStockTeam(product);
+    }
+
+    // TODO 4: Implement an undo/redo mechanism for product modification
 }
