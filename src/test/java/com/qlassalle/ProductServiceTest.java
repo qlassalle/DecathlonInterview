@@ -24,7 +24,14 @@ class ProductServiceTest {
         assertEquals(7, productService.getProducts().size());
     }
 
+    @Test
+    void getKMostExpensiveProducts_shouldReturnKMostExpensive() {
+        ProductService service = new ProductService();
+        var result = service.getKMostExpensiveProducts(3);
+        // TODO: Implement assertions once method is implemented
+    }
+
     // TODO how to improve the get by?
-    // TODO how to handle duplicates?
-    // TODO how to manage an auto increment?
+    // TODO how to handle duplicates in our list of products?
+    // TODO how to manage an auto increment on product IDs?
 }

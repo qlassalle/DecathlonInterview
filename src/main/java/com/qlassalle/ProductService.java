@@ -49,4 +49,24 @@ public class ProductService {
     private void sendMessageToDecreaseStockToStockTeam(Product product) {
         System.out.printf("Sending message to decrease stock for product %d...", product.getId());
     }
+
+    /**
+     * Returns the k most expensive products in the catalog.
+     *
+     * @param k the number of products to return
+     * @return a list of the k most expensive products, sorted from most to least expensive
+     *
+     * TODO: Implement this method. Consider edge cases (e.g., k > number of products, k <= 0),
+     * immutability of the returned list, and clean code best practices.
+     *
+     * Discussion points:
+     * - Should this return an immutable list?
+     * - How to handle ties in price?
+     * - What should happen if k is invalid?
+     * - What is the algorithmic complexity?
+     */
+    public List<Product> getKMostExpensiveProducts(int k) {
+        // TODO: implement
+        throw new UnsupportedOperationException("Not implemented yet");
+    }
 }
