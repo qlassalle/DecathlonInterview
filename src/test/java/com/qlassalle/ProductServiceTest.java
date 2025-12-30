@@ -3,6 +3,8 @@ package com.qlassalle;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ProductServiceTest {
@@ -19,9 +21,10 @@ class ProductServiceTest {
 
     @Test
     void shouldAddAProduct() {
-        productService.addProduct(7, "Foot ball", 10.41f);
+        productService.addProduct(7, "Basket ball", 7.69f);
 
-        assertEquals(7, productService.getProducts().size());
+        assertEquals(7, productService.getProducts()
+                                      .size());
     }
 
     @Test

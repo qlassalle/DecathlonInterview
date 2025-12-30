@@ -2,20 +2,21 @@ package com.qlassalle;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.PriorityQueue;
 
 public class ProductService {
 
-    private static List<Product> products = new ArrayList<>();
+    private List<Product> products = new ArrayList<>();
     public EcommerceService ecommerceService = new EcommerceService();
 
-    static {{
+    public ProductService() {
         products.add(new Product(1, "Foot ball", 10.41f));
         products.add(new Product(2, "Bike", 799f));
         products.add(new Product(3, "T-Shirt", 12f));
         products.add(new Product(4, "Shoes", 39.21f));
         products.add(new Product(5, "Skateboard", 29.99f));
         products.add(new Product(6, "Electric bike", 1899.49f));
-    }}
+    }
 
     public List<Product> getProducts() {
         return products;
@@ -46,11 +47,11 @@ public class ProductService {
      * TODO: Implement this method. Consider edge cases (e.g., k > number of products, k <= 0),
      * immutability of the returned list, and clean code best practices.
      *
-     * Discussion points:
+     * Potential discussion points:
+     * - What is the algorithmic complexity?
+     * - What should happen if k is invalid?
      * - Should this return an immutable list?
      * - How to handle ties in price?
-     * - What should happen if k is invalid?
-     * - What is the algorithmic complexity?
      */
     public List<Product> getKMostExpensiveProducts(int k) {
         // TODO 1: implement
