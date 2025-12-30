@@ -6,6 +6,7 @@ import java.util.List;
 public class ProductService {
 
     private List<Product> products = new ArrayList<>();
+    private Solutions solutions = new Solutions();
     public EcommerceService ecommerceService = new EcommerceService();
 
     public ProductService() {
@@ -42,13 +43,22 @@ public class ProductService {
      *
      * @param numberOfProducts the number of products to return
      * @return a list of the k most expensive products, sorted from most to least expensive
-    */
+     *
+     * TODO: Implement this method. Consider edge cases (e.g., k > number of products, k <= 0)
+     *
+     * Potential discussion points:
+     * - What is the algorithmic complexity?
+     * - What should happen if k is invalid?
+     * - Should this return an immutable list?
+     * - How to handle ties in price?
+     */
     public List<Product> getMostExpensiveProducts(int numberOfProducts) {
         // TODO 1: implement
-        throw new UnsupportedOperationException("Not implemented yet");
+        return solutions.heapSolution(products, numberOfProducts);
+//        return solutions.sortSolution(products, k);
     }
 
-    // TODO 2: implement a way to have discounts for a product
+    // TODO 2: Implement a way to handle discounts for products
 
     // TODO 3: Implement the methods in ecommerceService following the explanation located there
     public void sendProductToEcommerceAndStockTeam(int id) {

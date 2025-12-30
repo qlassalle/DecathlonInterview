@@ -1,19 +1,15 @@
 package com.qlassalle;
 
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ProductServiceTest {
 
-    ProductService productService;
-
-    @BeforeEach
-    void setUp() {
-        productService = new ProductService();
-    }
+    ProductService productService = new ProductService();
 
     @Test
     void shouldGetProductByItsId() {
@@ -32,12 +28,25 @@ class ProductServiceTest {
     }
 
     @Test
-    void getMostExpensiveProducts_shouldReturnMostExpensive() {
+    void getKMostExpensiveProducts_shouldReturnMostExpensive() {
         ProductService service = new ProductService();
         var result = service.getMostExpensiveProducts(3);
-        // TODO: Implement assertions once method is implemented
-        assertEquals(1, 2);
-        // or assertJ style
-        // Assertions.assertThat(1).isEqualTo(2);
+        List<Integer> expected = List.of(6, 2, 4);
+        assertEquals(expected, result.stream()
+                                     .map(Product::getId)
+                                     .toList());
     }
+    /**
+     * Edge cases for top K
+     *      - k <= 0
+     *      - k >= products size
+     */
+
+
+    /**
+     * More open questions:
+     * TODO how to improve the get by?
+     * TODO how to handle duplicates in our list of products?
+     * TODO how to manage an auto increment on product IDs?
+     **/
 }
