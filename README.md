@@ -1,6 +1,6 @@
 # How this repo works?
 
-There are three branches in this repo, both containing TODOs with increasing levels of difficulty:
+There are three branches in this repo, all containing TODOs with increasing levels of difficulty:
 - level-1
 - level-2
 - level-3
