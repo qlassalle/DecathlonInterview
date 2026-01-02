@@ -57,7 +57,7 @@ public class ProductService {
         throw new UnsupportedOperationException("Not implemented yet");
     }
 
-    // TODO 2: implement a method to get the average price of products in the catalog
+    // TODO 2: implement a way to have discounts for a product
 
     // TODO 3: how to test this? Implement these methods in the ecommerce service where it should be saved in message
     //  queues provided by some interface
