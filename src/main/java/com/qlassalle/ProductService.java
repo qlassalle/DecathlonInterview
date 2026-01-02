@@ -2,7 +2,6 @@ package com.qlassalle;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.PriorityQueue;
 
 public class ProductService {
 
@@ -25,7 +24,7 @@ public class ProductService {
     public void addProduct(int id, String name, float price) {
         var product = new Product(id, name, price);
         products.add(product);
-        sendProductToEcommerceAndSendEmailToClient(product.getId());
+        sendProductToEcommerceAndStockTeam(product.getId());
     }
 
     public Product getProductById(int id) {
@@ -41,7 +40,7 @@ public class ProductService {
     /**
      * Returns the k most expensive products in the catalog.
      *
-     * @param k the number of products to return
+     * @param numberOfProducts the number of products to return
      * @return a list of the k most expensive products, sorted from most to least expensive
      *
      * TODO: Implement this method. Consider edge cases (e.g., k > number of products, k <= 0),
@@ -53,7 +52,7 @@ public class ProductService {
      * - Should this return an immutable list?
      * - How to handle ties in price?
      */
-    public List<Product> getKMostExpensiveProducts(int k) {
+    public List<Product> getMostExpensiveProducts(int numberOfProducts) {
         // TODO 1: implement
         throw new UnsupportedOperationException("Not implemented yet");
     }
@@ -62,7 +61,7 @@ public class ProductService {
 
     // TODO 3: how to test this? Implement these methods in the ecommerce service where it should be saved in message
     //  queues provided by some interface
-    public void sendProductToEcommerceAndSendEmailToClient(int id) {
+    public void sendProductToEcommerceAndStockTeam(int id) {
         var product = getProductById(id);
         ecommerceService.sendProductToEcommerce(product);
         ecommerceService.sendMessageToDecreaseStockToStockTeam(product);

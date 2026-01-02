@@ -3,8 +3,6 @@ package com.qlassalle;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ProductServiceTest {
@@ -28,9 +26,9 @@ class ProductServiceTest {
     }
 
     @Test
-    void getKMostExpensiveProducts_shouldReturnKMostExpensive() {
+    void getKMostExpensiveProducts_shouldReturnMostExpensive() {
         ProductService service = new ProductService();
-        var result = service.getKMostExpensiveProducts(3);
+        var result = service.getMostExpensiveProducts(3);
         // TODO: Implement assertions once method is implemented
     }
 
