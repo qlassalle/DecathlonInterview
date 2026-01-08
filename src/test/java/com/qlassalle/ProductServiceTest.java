@@ -2,13 +2,19 @@ package com.qlassalle;
 
 
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ProductServiceTest {
 
-    ProductService productService = new ProductService();
+    ProductService productService;
+
+    @BeforeEach
+    void setUp() {
+        productService = new ProductService();
+    }
 
     @Test
     void shouldGetProductByItsId() {
@@ -27,7 +33,7 @@ class ProductServiceTest {
     }
 
     @Test
-    void getKMostExpensiveProducts_shouldReturnMostExpensive() {
+    void getMostExpensiveProducts_shouldReturnMostExpensive() {
         ProductService service = new ProductService();
         var result = service.getMostExpensiveProducts(3);
         // TODO: Implement assertions once method is implemented
