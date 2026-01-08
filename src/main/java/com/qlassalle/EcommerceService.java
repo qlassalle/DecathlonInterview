@@ -6,17 +6,21 @@ public class EcommerceService {
         /*
          TODO
          We want to send a message to the ecommerce team via a message broker
-         We need to provide and implement this message broker dependency in a testable way
-         */
-        System.out.printf("Sending product %d to ecommerce...", product.getId());
+         Implement the business logic using the correct abstraction and test it without using Mockito for the tests
+        */
+
+         // For example, we'd like to interact with our message broker in this way:
+         // messageService.send("ecommerce-channel", product);
     }
 
     public void sendMessageToIncreaseStockToStockTeam(Product product) {
         /*
           TODO
           We want to send a message to the stock team via a message broker
-          We need to provide and implement this message broker dependency in a testable way
+          Implement the business logic using the correct abstraction and test it without using Mockito for the tests
          */
-        System.out.printf("Sending message to increase stock for product %d...", product.getId());
+
+          // For example, we'd like to interact with our message broker in this way:
+          // messageService.send("stock-channel", product);
     }
 }
