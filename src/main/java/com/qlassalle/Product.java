@@ -1,7 +1,5 @@
 package com.qlassalle;
 
-import java.util.Objects;
-
 public class Product {
 
     private int id;
