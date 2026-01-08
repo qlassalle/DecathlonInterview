@@ -6,7 +6,7 @@ public class EcommerceService {
         System.out.printf("Sending product %d to ecommerce...", product.getId());
     }
 
-    public void sendMessageToDecreaseStockToStockTeam(Product product) {
+    public void sendMessageToIncreaseStockToStockTeam(Product product) {
         System.out.printf("Sending message to decrease stock for product %d...", product.getId());
     }
 }

@@ -64,7 +64,7 @@ public class ProductService {
     public void sendProductToEcommerceAndStockTeam(int id) {
         var product = getProductById(id);
         ecommerceService.sendProductToEcommerce(product);
-        ecommerceService.sendMessageToDecreaseStockToStockTeam(product);
+        ecommerceService.sendMessageToIncreaseStockToStockTeam(product);
     }
 
     // TODO 4: Implement an undo/redo mechanism for product modification
