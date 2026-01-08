@@ -1,6 +1,7 @@
 package com.qlassalle;
 
 
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -30,6 +31,9 @@ class ProductServiceTest {
         ProductService service = new ProductService();
         var result = service.getMostExpensiveProducts(3);
         // TODO: Implement assertions once method is implemented
+        assertEquals(1, 2);
+        // or assertJ style
+        // Assertions.assertThat(1).isEqualTo(2);
     }
 
     // TODO how to improve the get by?
