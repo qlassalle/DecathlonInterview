@@ -17,6 +17,6 @@ public class EcommerceService {
           We want to send a message to the stock team via a message broker
           We need to provide and implement this message broker dependency in a testable way
          */
-        System.out.printf("Sending message to decrease stock for product %d...", product.getId());
+        System.out.printf("Sending message to increase stock for product %d...", product.getId());
     }
 }
