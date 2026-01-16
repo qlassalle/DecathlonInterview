@@ -48,7 +48,8 @@ public class ProductService {
         throw new UnsupportedOperationException("Not implemented yet");
     }
 
-    // TODO 2: Create the business logic using stubs (no Mockito) and tests for this method
+    // TODO 2: Implement the business logic using the correct abstraction and test it without using Mockito for the
+    //  tests
     public void sendProductToEcommerceAndStockTeam(int id) {
         var product = getProductById(id);
         ecommerceService.sendProductToEcommerce(product);
