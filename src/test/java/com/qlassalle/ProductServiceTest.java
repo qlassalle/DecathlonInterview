@@ -1,7 +1,6 @@
 package com.qlassalle;
 
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -41,8 +40,4 @@ class ProductServiceTest {
         // or assertJ style
         // Assertions.assertThat(1).isEqualTo(2);
     }
-
-    // TODO how to improve the get by?
-    // TODO how to handle duplicates in our list of products?
-    // TODO how to manage an auto increment on product IDs?
 }
