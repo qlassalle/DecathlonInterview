@@ -5,22 +5,26 @@ public class EcommerceService {
     public void sendProductToEcommerce(Product product) {
         /*
          TODO
-         We want to send a message to the ecommerce team via a message broker
-         Implement the business logic using the correct abstraction and test it without using Mockito for the tests
-        */
+         We want to send a message to the ecommerce team via a message broker.
+         In preproduction, our message solution is RabbitMQ, while in production it's Kafka. Design a solution that
+         will allow this requirement.
 
-         // For example, we'd like to interact with our message broker in this way:
-         // messageService.send("ecommerce-channel", product);
+         The expected final code for this method is this:
+
+         messageService.send("ecommerce-channel", product);
+         */
     }
 
     public void sendMessageToIncreaseStockToStockTeam(Product product) {
         /*
           TODO
           We want to send a message to the stock team via a message broker
-          Implement the business logic using the correct abstraction and test it without using Mockito for the tests
-         */
+          In preproduction, our message solution is RabbitMQ, while in production it's Kafka. Design a solution that
+          will allow this requirement.
 
-          // For example, we'd like to interact with our message broker in this way:
-          // messageService.send("stock-channel", product);
+          The expected final code for this method is this:
+
+          messageService.send("ecommerce-channel", product);
+         */
     }
 }

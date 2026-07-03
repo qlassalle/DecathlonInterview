@@ -6,3 +6,6 @@ There are three branches in this repo, all containing TODOs with increasing leve
 - level-3
 
 Simply checkout into the requested branch to start the exercise.
+
+## Configuration
+To run this project, you'll only need a JDK with version 24.

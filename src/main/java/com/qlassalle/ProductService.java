@@ -50,8 +50,7 @@ public class ProductService {
 
     // TODO 2: implement a way to have discounts for a product
 
-    // TODO 3: how to test this? Implement these methods in the ecommerce service where it should be saved in message
-    //  queues provided by some interface
+    // TODO 3: Implement the methods in ecommerceService following the explanation located there
     public void sendProductToEcommerceAndStockTeam(int id) {
         var product = getProductById(id);
         ecommerceService.sendProductToEcommerce(product);
